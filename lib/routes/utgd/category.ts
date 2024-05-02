@@ -83,8 +83,8 @@ async function handler(ctx) {
                         description: md.render(result.article_description),
                     }),
                     author: authorResponse.data.display_name,
-                    pubDate: timezone(parseDate(result.article_published_time), +8),
                     category: [...result.article_category.map((c) => c.category_name), ...result.article_tag.map((t) => t.tag_name)],
+                    pubDate: timezone(parseDate(result.article_published_time), +8),
                 };
             })
         )
